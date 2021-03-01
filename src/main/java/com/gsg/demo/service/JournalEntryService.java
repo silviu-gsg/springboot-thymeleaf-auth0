@@ -23,8 +23,7 @@ public class JournalEntryService {
     public List<JournalEntryDto> findEntriesForUserId(String userId) {
         List<JournalEntry> journalEntries = journalEntryRepository.findByUserId(userId);
 
-        return modelMapper.map(journalEntries, new TypeToken<List<JournalEntryDto>>() {
-        }.getType());
+        return modelMapper.map(journalEntries, new TypeToken<List<JournalEntryDto>>() {}.getType());
     }
 
     public JournalEntryDto create(JournalEntryDto journalEntryDto) {

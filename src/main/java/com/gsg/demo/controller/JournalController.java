@@ -37,14 +37,14 @@ public class JournalController {
     @GetMapping("/entry/create")
     public String showJournalEntryCreateForm(JournalEntryDto journalEntry, Model model) {
         model.addAttribute("journalEntry", journalEntry);
-        return "add-journal";
+        return "add-journal-entry";
     }
 
     @PostMapping("/entry/create")
     public String createJournalEntry(@Valid JournalEntryDto journalEntry, BindingResult result, Model model,
                                      @AuthenticationPrincipal OidcUser oidcUser) {
         if (result.hasErrors()) {
-            return "add-journal";
+            return "add-journal-entry";
         }
 
         journalEntry.setUserId(oidcUser.getSubject());
@@ -56,14 +56,14 @@ public class JournalController {
     public String showJournalEntryUpdateForm(@PathVariable("id") Long id, Model model) {
         JournalEntryDto journalEntry = journalEntryService.findById(id);
         model.addAttribute("journalEntry", journalEntry);
-        return "update-journal";
+        return "update-journal-entry";
     }
 
     @PostMapping("/entry/update/{id}")
     public String updateJournalEntry(@PathVariable("id") Long id, @Valid JournalEntryDto journalEntry, BindingResult result,
                                      Model model, @AuthenticationPrincipal OidcUser oidcUser) {
         if (result.hasErrors()) {
-            return "add-journal";
+            return "add-journal-entry";
         }
 
         journalEntryService.update(id, journalEntry);
