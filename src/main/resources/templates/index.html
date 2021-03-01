@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/default}">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layouts/default}">
 
 <div id="page" layout:fragment="content">
     <div class="container">
         <div class="mt-5">
             <div class="text-center hero my-5">
-                <img class="mb-3 app-logo" src="/images/logos.png" alt="Spring logo" width="120"/>
-                <h1 class="mb-4">Notes App based on SpringBoot, Thymeleaf & Auth0</h1>
+                <img class="mb-3 app-logo" th:src="@{/images/logos.png}" alt="App logo" width="120"/>
+                <h1 class="mb-4">Journaling App based on SpringBoot, Thymeleaf & Auth0</h1>
                 <p class="lead">
-                    A Notes App that demonstrates an authentication flow for an MVC web application using Spring Boot.
+                    A Journaling App that demonstrates an authentication flow for an MVC web application using Spring Boot.
                 </p>
             </div>
         </div>
