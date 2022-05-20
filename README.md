@@ -47,5 +47,5 @@ After the server is up and running, go to:
 ```
 http://localhost:3000/auth0-demo
 ```
-and either use a Google account to login or create a new one which will be managed by Auth0.
+and either use a Google account to login or create a new one which will be managed by Auth0
   
